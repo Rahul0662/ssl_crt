@@ -21,7 +21,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 3) Disable old Centreon configs (rename only)
 cd /etc/httpd/conf.d
 mv 10-centreon.conf 10-centreon.conf.bkp
-mv 10-centreon-ssl.conf 10-centreon-ssl.conf.bkp
+mv ssl.conf ssl.conf.bkp
 
 4) Create SINGLE config (with variables)
 vi /etc/httpd/conf.d/centreon.conf
