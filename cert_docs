@@ -10,7 +10,7 @@ mkdir -p /etc/httpd/ssl
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 -keyout /etc/httpd/ssl/centreon.key \
 -out /etc/httpd/ssl/centreon.crt \
--subj "/CN=192.168.137.148"
+-subj "/CN=192.168.x.x"
 
 # FQDN case
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -28,7 +28,7 @@ vi /etc/httpd/conf.d/centreon.conf
 
 Paste:
 
-Define SERVER_NAME 192.168.137.148
+Define SERVER_NAME 192.168.x.x
 # or
 # Define SERVER_NAME centreon.mycompany.com
 
@@ -97,6 +97,6 @@ ss -tulnp | grep 443
 curl -k https://localhost/centreon
 
 Access:
-https://192.168.137.148/centreon
+https://192.168.x.x/centreon
 or
 https://centreon.mycompany.com/centreon
